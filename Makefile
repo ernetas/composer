@@ -9,20 +9,20 @@ DESCRIPTION = GetComposer.org
 all: download prepare build
 
 prepare:
-        echo " -- Ernestas Lukosevicius <ernetas@gmail.com> $(date -R)" >> package/DEBIAN/changelog
-        sed -i "s/version/$(VERSION)/g" package/DEBIAN/changelog
-        sed -i "s/package/$(NAME)/g" package/DEBIAN/changelog
-        cat package/DEBIAN/changelog
-        sed -i "s/version/$(VERSION)/g" package/DEBIAN/control
-        sed -i "s/description/$(DESCRIPTION)/g" package/DEBIAN/control
-        sed -i "s/package/$(NAME)/g" package/DEBIAN/control
+	echo " -- Ernestas Lukosevicius <ernetas@gmail.com> $(date -R)" >> package/DEBIAN/changelog
+	sed -i "s/version/$(VERSION)/g" package/DEBIAN/changelog
+	sed -i "s/package/$(NAME)/g" package/DEBIAN/changelog
+	cat package/DEBIAN/changelog
+	sed -i "s/version/$(VERSION)/g" package/DEBIAN/control
+	sed -i "s/description/$(DESCRIPTION)/g" package/DEBIAN/control
+	sed -i "s/package/$(NAME)/g" package/DEBIAN/control
 
 download:
-        mkdir -p package/usr/bin/
-        wget https://getcomposer.org/download/$(MAJOR)/composer.phar -O package/usr/bin/composer
-        chmod +x package/usr/bin/composer
+	mkdir -p package/usr/bin/
+	wget https://getcomposer.org/download/$(MAJOR)/composer.phar -O package/usr/bin/composer
+	chmod +x package/usr/bin/composer
 
 build:
-        dpkg -b ./package/ $(NAME)-$(VERSION).deb
-        dpkg --info $(NAME)-$(VERSION).deb
-        dpkg -c $(NAME)-$(VERSION).deb
+	dpkg -b ./package/ $(NAME)-$(VERSION).deb
+	dpkg --info $(NAME)-$(VERSION).deb
+	dpkg -c $(NAME)-$(VERSION).deb
