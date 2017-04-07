@@ -1,5 +1,5 @@
 NAME = composer
-MAJOR = 1.2.1
+MAJOR = 1.4.1
 MINOR = 0
 VERSION = $(MAJOR)-$(MINOR)
 DESCRIPTION = GetComposer.org
