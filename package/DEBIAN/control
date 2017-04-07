@@ -1,0 +1,8 @@
+Package: package
+Version: version
+Section: base
+Priority: optional
+Architecture: amd64
+Maintainer: Ernestas Lukosevicius <ernetas@gmail.com>
+Description: description
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+chown root:root /usr/bin/composer
+chmod 755 /usr/bin/composer
+

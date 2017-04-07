@@ -1,0 +1,11 @@
+sudo: required
+language: generic
+
+script:
+  - env
+  - ls
+  - dpkg -S
+
+branches:
+  except:
+    - /^debian\/\d/
